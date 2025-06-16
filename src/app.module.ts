@@ -16,9 +16,13 @@ import { AuthModule } from './auth/auth/auth.module';
 import { UsuarioModule } from './resource/usuario/usuario.module';
 import { RolModule } from './resource/rol/rol.module';
 import { PermisoModule } from './resource/permiso/permiso.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path'; 
 
 @Module({
-  imports: [PrismaClient, EstudianteModule, CarreraModule, MateriaModule, DocenteModule, MatriculaModule, InscripcionModule, DictanModule, AlumnoModule, CarreraDocentesModule, UniversidadModule, AuthModule, UsuarioModule, RolModule, PermisoModule],
+  imports: [PrismaClient, EstudianteModule, CarreraModule, MateriaModule, DocenteModule, MatriculaModule, InscripcionModule, DictanModule, AlumnoModule, CarreraDocentesModule, UniversidadModule, AuthModule, UsuarioModule, RolModule, PermisoModule, 
+    ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'public') })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
