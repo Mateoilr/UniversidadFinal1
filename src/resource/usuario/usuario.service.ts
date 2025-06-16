@@ -1,8 +1,8 @@
 // src/usuario/usuario.service.ts
 import { Injectable } from '@nestjs/common';
-import {  Usuario } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { PrismaClient } from '@prisma/client';
+import { Usuario } from 'generated/prisma';
 
 
 @Injectable()
